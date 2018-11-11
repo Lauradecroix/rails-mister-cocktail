@@ -15,5 +15,4 @@
 //= require turbolinks
 //= require_tree .
 
-import { loadDynamicBannerText } from 'rails-mister-cocktail/app/assets/javascripts/components/banner';
-loadDynamicBannerText();
+
