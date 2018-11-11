@@ -16,8 +16,8 @@
         <tbody>
           <thead>
             <th>Ingredient</th>
-            <th>Description</th>
-            <th>Action</th>
+            <th>Quantity</th>
+            <th></th>
           </thead>
           <% @cocktail.doses.each do |dose| %>
             <tr>
@@ -37,6 +37,6 @@
 
 
 
-<%= link_to 'Add a new Dose', new_cocktail_dose_path(@cocktail),class: 'btn btn-primary' %>
+<%= link_to 'Add a new ingredient', new_cocktail_dose_path(@cocktail),class: 'btn btn-primary' %>
 <%= link_to 'Edit', edit_cocktail_path(@cocktail), class: 'btn btn-primary' %> |
 <%= link_to 'Back', cocktails_path, class: 'btn btn-primary' %>
