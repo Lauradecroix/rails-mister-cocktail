@@ -1,37 +1,30 @@
 <p id="notice"><%= notice %></p>
 
+
+
 <h1 id="h1cocktails">Cocktails</h1>
 
-<%= image_tag "https://images.pexels.com/photos/1028637/pexels-photo-1028637.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940", alt: "Cocktail", width: 500 %>
-
-<%= cl_image_tag("huk4cqpvbwxt9gdpafss",
-      width: 400, height: 300, crop: :fill) %>
-
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @cocktails.each do |cocktail| %>
-      <tr>
-        <td><%= cocktail.name %></td>
-        <td><%= link_to 'Show', cocktail %></td>
-        <td><%= link_to 'Edit', edit_cocktail_path(cocktail) %></td>
-        <td><%= link_to 'Destroy', cocktail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-
+<div class="card-group">
+  <% @cocktails.each do |cocktail| %>
+  <div class="col-6 col-md-4">
+    <img class="card-img-top" src="<%= cl_image_path cocktail.photo, height: 300, width: 400, crop: :fill %>" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title"><%= cocktail.name %></h5>
+      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      <td><%= link_to 'Show', cocktail, class: 'btn btn-secondary'%></td>
+        <td><%= link_to 'Edit', edit_cocktail_path(cocktail), class: 'btn btn-secondary'%></td>
+        <td><%= link_to 'Destroy', cocktail, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-secondary' %></td>
+    </div>
+  </div>
+  <% end %>
+</div>
 
 
 <br>
 
+
+
 <%= link_to 'New Cocktail', new_cocktail_path, class: 'btn btn-primary' %>
+
 

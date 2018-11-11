@@ -1,11 +1,13 @@
 <p id="notice"><%= notice %></p>
 
+
+
 <p>
   <strong>Name:</strong>
   <%= @cocktail.name %>
 </p>
 
-<%= image_tag "https://images.pexels.com/photos/298719/pexels-photo-298719.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940", alt: "Cocktail", width: 200 %>
+<%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
 
   <div class="row">
     <div class="col-sm-12 col-md-6">
